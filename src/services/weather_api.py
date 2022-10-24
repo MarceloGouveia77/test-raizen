@@ -12,7 +12,7 @@ class WeatherApi:
         self.city = city
         self.complete_url = self.base_url + "appid=" + self.api_key + "&q=" + self.city
 
-    def get_weather_and_save(self):
+    def get_weather_info(self):
         response = requests.get(self.complete_url)
         data = response.json()
         return {
