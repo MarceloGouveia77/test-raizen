@@ -22,7 +22,7 @@ async def get_weather_by_city(city: str):
     if not data:
         weather_api = WeatherApi(city)
         try:
-            data = weather_api.get_weather_and_save()
+            data = weather_api.get_weather_info()
             await weather_repository.insert(data)
         except:
             raise HTTPException(status_code=404, detail="City not found.")
